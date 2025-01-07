@@ -426,9 +426,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 806c4e35141a6a1418f248e88be4e50f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a3412b63d55d1b4aa4f9c4274e0a2f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1382977998}
+  offset: {x: 0, y: 0, z: -10}
 --- !u!1 &797104939
 GameObject:
   m_ObjectHideFlags: 0
@@ -576,6 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cde87fd6c4431418ce9777105d60b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameTime: {fileID: 0}
 --- !u!1 &800911886
 GameObject:
   m_ObjectHideFlags: 0
