@@ -258,7 +258,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -661299429
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &392994183
@@ -1752,7 +1752,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -661299429
   m_SortingLayer: 2
-  m_SortingOrder: 2
+  m_SortingOrder: 200
   m_Sprite: {fileID: 1478861057769371548, guid: 4b1343d8c67edf540b54c6657614b4c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1777,6 +1777,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 100
+  healthBar: {fileID: 693004068}
 --- !u!114 &1382978004
 MonoBehaviour:
   m_ObjectHideFlags: 0
