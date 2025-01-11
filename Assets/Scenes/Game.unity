@@ -578,6 +578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cde87fd6c4431418ce9777105d60b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameTime: {fileID: 0}
 --- !u!1 &800911886
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,6 +907,7 @@ MonoBehaviour:
   lastHorizontalVector: 0
   lastVerticalVector: 0
   moveDir: {x: 0, y: 0}
+  lastMovedVector: {x: 0, y: 0}
 --- !u!50 &1382977997
 Rigidbody2D:
   serializedVersion: 4
@@ -945,7 +947,8 @@ Transform:
   m_LocalPosition: {x: 0.49, y: 5.0104, z: 0}
   m_LocalScale: {x: 1.8718107, y: 3.066134, z: 3}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 1719528346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1382977999
@@ -1153,6 +1156,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1527804843}
   m_CullTransparentMesh: 1
+--- !u!1 &1719528345
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1719528346}
+  - component: {fileID: 1719528347}
+  m_Layer: 0
+  m_Name: Knife Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1719528346
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719528345}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.13, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1382977998}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1719528347
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1719528345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 139a7763830755e439e959a843c99a49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 2438599801926302233, guid: 7c291dabb28947848b980a5732e2a51d, type: 3}
+  damage: 0
+  speed: 10
+  cooldownDuration: 1
+  pierce: 0
 --- !u!1 &1981966149
 GameObject:
   m_ObjectHideFlags: 0
