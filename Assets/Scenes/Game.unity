@@ -525,7 +525,7 @@ Camera:
   far clip plane: 1000
   field of view: 100
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 6
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -718,7 +718,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cde87fd6c4431418ce9777105d60b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GameTime: {fileID: 797104941}
 --- !u!1 &800911886
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,8 +1008,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 4aba809c3d559e747a7bdf9a569319e9, type: 2}
   bigTiles: []
   craterTiles: []
-  treeTile: {fileID: 11400000, guid: 29449032176980a4b8923129f510ee74, type: 2}
-  pondTile: {fileID: 11400000, guid: dd70e396485fa41439984a9fbafc533e, type: 2}
+  treeTile: {fileID: 0}
+  pondTile: {fileID: 0}
   mapWidth: 100
   mapHeight: 100
   treeChance: 0.1
@@ -1151,7 +1150,7 @@ Tilemap:
   m_TileColorArray: []
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
-  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: 0, y: 0, z: 0}
   m_Size: {x: 0, y: 0, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
