@@ -6,10 +6,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
+   
     public float moveSpeed; // Roopies movement speed
     [HideInInspector]
     public float lastHorizontalVector;// for tracking the last horizontal vector for the animator
@@ -18,7 +15,13 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     [HideInInspector]
     public Vector2 moveDir;
-
+    [HideInInspector]
+    public Vector2 lastMovedVector;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+        lastMovedVector = new Vector2(1, 0f); //knife wont move at game start while player hasnt moved if this isnt here
+    }
     void Update()
     {
         InputManagement();
@@ -39,10 +42,17 @@ public class PlayerMovement : MonoBehaviour
         if (moveDir.x != 0)
         {
             lastHorizontalVector = moveDir.x;
+            lastMovedVector = new Vector2(lastHorizontalVector, 0f);
         }
         if (moveDir.y != 0)
         {
             lastVerticalVector = moveDir.y;
+            lastMovedVector = new Vector2(0f, lastVerticalVector);
+        }
+
+        if(moveDir.x != 0 && moveDir.y != 0)
+        {
+            lastMovedVector = new Vector2(lastHorizontalVector, lastVerticalVector);
         }
     }
 
