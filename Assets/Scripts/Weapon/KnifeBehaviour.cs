@@ -1,23 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class KnifeBehaviour : ProjectileWeaponBehaviour
-{
+public class KnifeBehaviour : ProjectileWeaponBehaviour {
+    private KnifeController kc;
+    [SerializeField] private GameObject xpCollectiblePrefab;
 
-    KnifeController kc;
-
-
-    // Start is called before the first frame update
-    protected override void Start()
-    {
+    protected override void Start() {
         base.Start();
         kc = FindObjectOfType<KnifeController>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.position += direction * kc.speed * Time.deltaTime; // set movement of knife
+    void Update() {
+        transform.position += direction * kc.speed * Time.deltaTime;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision) {
+        if (collision.CompareTag("Enemy")) {
+            EnemyController enemy = collision.GetComponent<EnemyController>();
+            if (enemy != null) {
+                SpawnXPCollectible(enemy.transform.position);
+                EnemyWaveSpawner.Instance.EnemyDefeated();
+                Destroy(collision.gameObject);
+            }
+        }
+    }
+
+    private void SpawnXPCollectible(Vector2 position) {
+        Instantiate(xpCollectiblePrefab, position, Quaternion.identity);
     }
 }

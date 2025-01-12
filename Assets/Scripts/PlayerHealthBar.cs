@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealth : MonoBehaviour {
+public class PlayerHealthBar : MonoBehaviour {
     [SerializeField] private float maxHealth = 100f;  // Maximum health
     [SerializeField] private Slider healthBar;        // Reference to the health bar slider
 
