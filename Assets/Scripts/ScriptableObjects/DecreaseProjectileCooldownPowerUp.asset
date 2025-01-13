@@ -13,20 +13,20 @@ MonoBehaviour:
   m_Name: DecreaseProjectileCooldownPowerUp
   m_EditorClassIdentifier: 
   levels:
-  - Name: Projectile Damage 1
-    Description: +10% Projectile damage
-    Icon: {fileID: 21300000, guid: 47b63b2351a962548b5ed9587a9b9987, type: 3}
-  - Name: Projectile Damage 2
-    Description: +10% Projectile damage
-    Icon: {fileID: 21300000, guid: 47b63b2351a962548b5ed9587a9b9987, type: 3}
-  - Name: Projectile Damage 3
-    Description: +10% Projectile damage
-    Icon: {fileID: 21300000, guid: 47b63b2351a962548b5ed9587a9b9987, type: 3}
-  - Name: Projectile Damage 4
-    Description: +10% Projectile damage
-    Icon: {fileID: 21300000, guid: 47b63b2351a962548b5ed9587a9b9987, type: 3}
-  - Name: Projectile Damage 5
-    Description: +10% Projectile damage
-    Icon: {fileID: 21300000, guid: 47b63b2351a962548b5ed9587a9b9987, type: 3}
+  - Name: Projectile Cooldown 1
+    Description: -10% Projectile cooldown
+    Icon: {fileID: 21300000, guid: f1b2ac40706cda94db57210f795f7f9e, type: 3}
+  - Name: Projectile Cooldown 2
+    Description: -10% Projectile cooldown
+    Icon: {fileID: 21300000, guid: f1b2ac40706cda94db57210f795f7f9e, type: 3}
+  - Name: Projectile Cooldown 3
+    Description: -10% Projectile cooldown
+    Icon: {fileID: 21300000, guid: f1b2ac40706cda94db57210f795f7f9e, type: 3}
+  - Name: Projectile Cooldown 4
+    Description: -10% Projectile cooldown
+    Icon: {fileID: 21300000, guid: f1b2ac40706cda94db57210f795f7f9e, type: 3}
+  - Name: Projectile Cooldown 5
+    Description: -10% Projectile cooldown
+    Icon: {fileID: 21300000, guid: f1b2ac40706cda94db57210f795f7f9e, type: 3}
   maxLevel: 5
   projectileCooldownDecreaseAmount: 0.5
