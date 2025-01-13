@@ -16,21 +16,17 @@ MonoBehaviour:
   - Name: Movement speed 1
     Description: +10% Player movement speed
     Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
-    EffectValue: 5
   - Name: Movement speed 2
     Description: +10% Player movement speed
     Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
-    EffectValue: 10
   - Name: Movement speed 3
     Description: +10% Player movement speed
     Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
-    EffectValue: 15
   - Name: Movement speed 4
     Description: +10% Player movement speed
     Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
-    EffectValue: 20
   - Name: Movement speed 5
     Description: +10% Player movement speed
     Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
-    EffectValue: 25
   maxLevel: 5
+  speedBoostAmount: 1
