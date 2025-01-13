@@ -8,7 +8,6 @@ public class PowerUpSO : ScriptableObject {
         public string Name;
         public string Description;
         public Sprite Icon;
-        public float EffectValue;
     }
 
     [SerializeField] private List<PowerUpLevel> levels = new List<PowerUpLevel>();
@@ -19,7 +18,6 @@ public class PowerUpSO : ScriptableObject {
     public string Name => levels[CurrentLevel].Name;
     public string Description => levels[CurrentLevel].Description;
     public Sprite Icon => levels[CurrentLevel].Icon;
-    public float EffectValue => levels[CurrentLevel].EffectValue;
 
     public bool IsMaxLevel => CurrentLevel >= maxLevel - 1;
 

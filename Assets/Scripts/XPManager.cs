@@ -8,6 +8,7 @@ public class XPManager : MonoBehaviour {
     [SerializeField] private float maxXP = 100f;
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
+    [SerializeField] private TMP_Text currentLevelText; // New text field for the current level
     [SerializeField] private GameObject powerUpPanel;
     [SerializeField] private Button[] powerUpButtons;
     [SerializeField] private TMP_Text[] powerUpDescriptions;
@@ -21,6 +22,7 @@ public class XPManager : MonoBehaviour {
         playerMovement = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
         UpdateXPBar();
         UpdateLevelText();
+        UpdateCurrentLevelText();
         ResetPowerUpsToLevel1();
         powerUpPanel.SetActive(false);
     }
@@ -49,6 +51,10 @@ public class XPManager : MonoBehaviour {
         levelText.text = $"Level: {playerLevel}";
     }
 
+    private void UpdateCurrentLevelText() {
+        currentLevelText.text = $"Current level: {playerLevel}";
+    }
+
     private void LevelUp() {
         currentXP = 0f;
         playerLevel++;
@@ -56,7 +62,7 @@ public class XPManager : MonoBehaviour {
 
         UpdateLevelText();
         UpdateXPBar();
-
+        UpdateCurrentLevelText();
         ShowPowerUpOptions();
     }
 
@@ -77,8 +83,7 @@ public class XPManager : MonoBehaviour {
                 powerUpButtons[i].image.enabled = true;
 
                 powerUpButtons[i].onClick.RemoveAllListeners();
-                powerUpButtons[i].onClick.AddListener(() =>
-                {
+                powerUpButtons[i].onClick.AddListener(() => {
                     powerUp.ApplyEffect(playerMovement.gameObject);
                     powerUp.LevelUp();
                     ClosePowerUpPanel();
@@ -88,6 +93,7 @@ public class XPManager : MonoBehaviour {
                 // disable button if no power up available (they reached max lvl)
                 powerUpButtons[i].image.enabled = false;
                 powerUpButtons[i].onClick.RemoveAllListeners();
+                powerUpDescriptions[i].text = "";
             }
         }
     }

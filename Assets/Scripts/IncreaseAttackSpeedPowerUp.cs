@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "IncreaseAttackSpeedPowerUp", menuName = "PowerUp/AttackSpeed")]
+[CreateAssetMenu(fileName = "IncreaseAttackSpeedPowerUp", menuName = "PowerUp/IncreaseAttackSpeed")]
 public class IncreaseAttackSpeedPowerUp : PowerUpSO {
+    public float attackSpeedBoostAmount;
     public override void ApplyEffect(GameObject player) {
-        base.ApplyEffect(player);
-        //logic for increase attack speed effect goes here
-        Debug.Log("attack speed increased");
+        var attackComponent = player.GetComponentInChildren<KnifeController>();
+        if (attackComponent != null) {
+            attackComponent.speed += attackSpeedBoostAmount;
+            Debug.Log($"{Name}: Decreased cooldown by {attackSpeedBoostAmount}");
+        }
     }
 }

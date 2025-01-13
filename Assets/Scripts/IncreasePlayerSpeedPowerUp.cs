@@ -1,10 +1,13 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "SpeedBoostPowerUp", menuName = "PowerUp/SpeedBoost")]
+[CreateAssetMenu(fileName = "IncreasePlayerSpeedPowerUp", menuName = "PowerUp/IncreasePlayerSpeed")]
 public class IncreasePlayerSpeedPowerUp : PowerUpSO {
+    public float speedBoostAmount;
     public override void ApplyEffect(GameObject player) {
-        base.ApplyEffect(player);
-        //logic for increase player speed effect goes here
-        Debug.Log("Player speed increased!");
+        var playerMovement = player.GetComponent<PlayerMovement>();
+        if (playerMovement != null) {
+            playerMovement.moveSpeed += speedBoostAmount;
+            Debug.Log($"{Name}: Increased player speed by {speedBoostAmount}");
+        }
     }
 }

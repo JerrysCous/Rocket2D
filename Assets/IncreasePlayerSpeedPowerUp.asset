@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a699aed314a0d1a4db32baa006a1306b, type: 3}
-  m_Name: SpeedBoostPowerUp
+  m_Name: IncreasePlayerSpeedPowerUp
   m_EditorClassIdentifier: 
   levels:
   - Name: Movement speed 1
