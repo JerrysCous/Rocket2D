@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a699aed314a0d1a4db32baa006a1306b, type: 3}
+  m_Name: SpeedBoostPowerUp
+  m_EditorClassIdentifier: 
+  levels:
+  - Name: Movement speed 1
+    Description: +10% Player movement speed
+    Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
+    EffectValue: 5
+  - Name: Movement speed 2
+    Description: +10% Player movement speed
+    Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
+    EffectValue: 10
+  - Name: Movement speed 3
+    Description: +10% Player movement speed
+    Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
+    EffectValue: 15
+  - Name: Movement speed 4
+    Description: +10% Player movement speed
+    Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
+    EffectValue: 20
+  - Name: Movement speed 5
+    Description: +10% Player movement speed
+    Icon: {fileID: 21300000, guid: 79db0b757fc993548adf813b6b6ab5f1, type: 3}
+    EffectValue: 25
+  maxLevel: 5
