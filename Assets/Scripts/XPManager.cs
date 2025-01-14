@@ -8,7 +8,7 @@ public class XPManager : MonoBehaviour {
     [SerializeField] private float maxXP = 100f;
     [SerializeField] private Slider xpSlider;
     [SerializeField] private TMP_Text levelText;
-    [SerializeField] private TMP_Text currentLevelText; // New text field for the current level
+    [SerializeField] private TMP_Text currentLevelText;
     [SerializeField] private GameObject powerUpPanel;
     [SerializeField] private Button[] powerUpButtons;
     [SerializeField] private TMP_Text[] powerUpDescriptions;

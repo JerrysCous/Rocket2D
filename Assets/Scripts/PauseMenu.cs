@@ -39,12 +39,21 @@ public class PauseMenu : MonoBehaviour {
     }
 
     public void OnSettingsButtonClicked() {
-        // implement settings menu functionality here
-        Debug.Log("settings button clicked");
+        // Implement settings menu functionality here
+        Debug.Log("Settings button clicked");
     }
 
     public void OnQuitButtonClicked() {
-        Debug.Log("quit button clicked");
+        Debug.Log("Quit button clicked");
         Application.Quit();
     }
+
+    public void OnMainMenuButtonClicked() {
+        Debug.Log("Main Menu button clicked");
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("MainMenu");
+    }
+
+
+
 }
