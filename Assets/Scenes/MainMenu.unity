@@ -389,6 +389,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6838129}
   m_CullTransparentMesh: 1
+--- !u!1 &69376898 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 353217836621074740, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
+  m_PrefabInstance: {fileID: 1399045246}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &249009568
 GameObject:
   m_ObjectHideFlags: 0
@@ -1103,6 +1108,7 @@ GameObject:
   - component: {fileID: 674520419}
   - component: {fileID: 674520418}
   - component: {fileID: 674520417}
+  - component: {fileID: 674520420}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1185,6 +1191,20 @@ Transform:
   - {fileID: 451592557}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674520420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674520416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fa2faa83379beb43b6e18fae6530cb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resumeButtonEnabled: 0
+  resumeButton: {fileID: 69376898}
 --- !u!1 &949411774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1570,6 +1590,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1231156236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1231156237}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1231156237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1231156236}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1276856911
 GameObject:
   m_ObjectHideFlags: 0
@@ -1713,6 +1764,22 @@ PrefabInstance:
     - target: {fileID: 353217836621074740, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
       propertyPath: m_Name
       value: Resume
+      objectReference: {fileID: 0}
+    - target: {fileID: 353217836621074740, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327864381417201117, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1668046978}
+    - target: {fileID: 1327864381417201117, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PlayGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 1327864381417201117, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 1761837621890331500, guid: 7fe7dd592d5461a4eb541fb5df10c21d, type: 3}
       propertyPath: m_Pivot.x
@@ -2378,6 +2445,7 @@ GameObject:
   - component: {fileID: 2042779067}
   - component: {fileID: 2042779066}
   - component: {fileID: 2042779065}
+  - component: {fileID: 2042779068}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -2435,6 +2503,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2042779068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2042779064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee6314fa71fda4943a2fefec6cecf04c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2442,3 +2522,4 @@ SceneRoots:
   - {fileID: 674520419}
   - {fileID: 2042779067}
   - {fileID: 1230402282}
+  - {fileID: 1231156237}

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
     public static LevelManager Instance;
@@ -14,6 +15,7 @@ public class LevelManager : MonoBehaviour {
     public XPManager xpManager;
     public PlayerHealthBar playerHealthBar;
     public WeaponController weaponController;
+    public GameObject loadButton;
 
     private void Update() {
         //placeholder inputs for testing
@@ -25,9 +27,9 @@ public class LevelManager : MonoBehaviour {
             LoadLevel();
         }
     }
-
     public void SaveLevelButton() {
         SaveLevel();
+        loadButton.SetActive(true);
     }
 
     public void LoadLevelButton() {
@@ -35,6 +37,19 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void Awake() {
+        // check if savegame exists, if it does, load it
+        string filePath = Application.dataPath + "/saveGame.json";
+        if (File.Exists(filePath)) {
+            string json = File.ReadAllText(filePath);
+            if (!string.IsNullOrEmpty(json)) {
+                Debug.Log("save already exists");
+            }
+        }
+        else {
+            Debug.Log("save file not found");
+
+        }
+
         if (Instance == null) {
             Instance = this;
         }
@@ -196,8 +211,6 @@ public class LevelManager : MonoBehaviour {
             File.WriteAllText(Application.dataPath + "/saveGame.json", json);
         }
     }
-
-
 
 }
 
