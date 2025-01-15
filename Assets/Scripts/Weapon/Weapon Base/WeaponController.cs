@@ -11,7 +11,7 @@ public class WeaponController : MonoBehaviour
     public float damage;
     public float speed;
     public float cooldownDuration;
-    float currentCooldown;
+    public float currentCooldown;
     public int pierce;
 
     protected PlayerMovement pm;
@@ -36,5 +36,13 @@ public class WeaponController : MonoBehaviour
     protected virtual void Attack()
     {
         currentCooldown = cooldownDuration; // reset cooldown
+    }
+
+    public float GetCurrentCooldown() {
+        return cooldownDuration;
+    }
+
+    public float GetCurrentSpeed() {
+        return speed;
     }
 }

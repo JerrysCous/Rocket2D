@@ -14,7 +14,7 @@ public class XPManager : MonoBehaviour
     [SerializeField] private Button[] powerUpButtons;
     [SerializeField] private TMP_Text[] powerUpDescriptions;
     [SerializeField] private PlayerMovement playerMovement;
-    [SerializeField] private List<PowerUpSO> allPowerUps;
+    public List<PowerUpSO> allPowerUps;
 
     private float currentXP = 0f;
     private int playerLevel = 1;

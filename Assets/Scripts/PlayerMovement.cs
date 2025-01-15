@@ -35,6 +35,10 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public float GetCurrentSpeed() {
+        return moveSpeed;
+    }
+
     void FixedUpdate()
     {
         if (canMove) // Only move if the player can move

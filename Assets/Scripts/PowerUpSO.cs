@@ -13,7 +13,8 @@ public class PowerUpSO : ScriptableObject {
     [SerializeField] private List<PowerUpLevel> levels = new List<PowerUpLevel>();
     [SerializeField] private int maxLevel = 3;
 
-    public int CurrentLevel { get; private set; } = 0;
+
+    public int CurrentLevel { get; protected set; } = 0;
 
     public string Name => levels[CurrentLevel].Name;
     public string Description => levels[CurrentLevel].Description;
@@ -33,5 +34,14 @@ public class PowerUpSO : ScriptableObject {
 
     public void ResetToLevel1() {
         CurrentLevel = 0;
+    }
+
+    public void SetLevel(int level) {
+        if (level >= 0 && level < maxLevel) {
+            CurrentLevel = level;
+        }
+        else {
+            Debug.LogWarning($"Invalid level {level} for power-up {Name}. Must be between 0 and {maxLevel - 1}.");
+        }
     }
 }

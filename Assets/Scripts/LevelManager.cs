@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour {
     public Timer timer;
     public XPManager xpManager;
     public PlayerHealthBar playerHealthBar;
+    public WeaponController weaponController;
 
     private void Update() {
         //placeholder inputs for testing
@@ -23,6 +24,14 @@ public class LevelManager : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.L)) {
             LoadLevel();
         }
+    }
+
+    public void SaveLevelButton() {
+        SaveLevel();
+    }
+
+    public void LoadLevelButton() {
+        LoadLevel();
     }
 
     private void Awake() {
@@ -57,6 +66,13 @@ public class LevelManager : MonoBehaviour {
 
         if (xpManager != null) {
             xpManager.SetXP(data.currentXP, data.playerLevel);
+
+            // Load power-up levels
+            for (int i = 0; i < data.powerUpLevels.Count; i++) {
+                if (i < xpManager.allPowerUps.Count) {
+                    xpManager.allPowerUps[i].SetLevel(data.powerUpLevels[i]);
+                }
+            }
         }
 
         if (playerHealthBar != null) {
@@ -75,7 +91,15 @@ public class LevelManager : MonoBehaviour {
         if (player != null) {
             player.position = new Vector3(data.playerPosition.x, data.playerPosition.y, data.playerPosition.z);
             player.rotation = Quaternion.Euler(data.playerRotation.x, data.playerRotation.y, data.playerRotation.z);
+            // load moveSpeed
+            player.GetComponent<PlayerMovement>().moveSpeed = data.moveSpeed;
         }
+
+        // load weapon cooldown
+        weaponController.cooldownDuration = data.weaponCooldown;
+
+        // load weapon speed
+        weaponController.speed = data.weaponSpeed;
 
         // load enemies
         for (int i = 0; i < data.enemiesPositions.Count; i++) {
@@ -92,6 +116,8 @@ public class LevelManager : MonoBehaviour {
                 );
             }
         }
+
+
     }
 
     void SaveLevel() {
@@ -133,6 +159,12 @@ public class LevelManager : MonoBehaviour {
             }
         }
 
+        // save moveSpeed
+
+        if (player != null) {
+            levelData.moveSpeed = player.gameObject.GetComponent<PlayerMovement>().GetCurrentSpeed();
+        }
+
         // save player position
         if (player != null) {
             levelData.playerPosition = new Vector3Data(player.position);
@@ -145,8 +177,24 @@ public class LevelManager : MonoBehaviour {
             levelData.enemiesRotations.Add(new Vector3Data(enemy.rotation.eulerAngles));
         }
 
-        string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/saveGame.json", json);
+        // save weapon cooldown and speed
+
+        if (weaponController != null) {
+            levelData.weaponCooldown = weaponController.GetCurrentCooldown();
+            levelData.weaponSpeed = weaponController.GetCurrentSpeed();
+        }
+
+
+
+        // save power-up levels
+        if (xpManager != null) {
+            foreach (var powerUp in xpManager.allPowerUps) {
+                levelData.powerUpLevels.Add(powerUp.CurrentLevel);
+            }
+
+            string json = JsonUtility.ToJson(levelData, true);
+            File.WriteAllText(Application.dataPath + "/saveGame.json", json);
+        }
     }
 
 
@@ -170,15 +218,21 @@ public class LevelData {
 
     public List<Vector3Data> enemiesPositions = new List<Vector3Data>();
     public List<Vector3Data> enemiesRotations = new List<Vector3Data>();
+
+    public List<int> powerUpLevels = new List<int>();
+
+    public float moveSpeed;
+    public float weaponCooldown;
+    public float weaponSpeed;
 }
 
-[System.Serializable]
-public class Vector3Data {
-    public float x, y, z;
+    [System.Serializable]
+    public class Vector3Data {
+        public float x, y, z;
 
-    public Vector3Data(Vector3 vector) {
-        x = vector.x;
-        y = vector.y;
-        z = vector.z;
+        public Vector3Data(Vector3 vector) {
+            x = vector.x;
+            y = vector.y;
+            z = vector.z;
+        }
     }
-}
