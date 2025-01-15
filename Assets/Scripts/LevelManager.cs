@@ -47,7 +47,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     void LoadLevel() {
-        string json = File.ReadAllText(Application.dataPath + "/gameSave.json");
+        string json = File.ReadAllText(Application.dataPath + "/saveGame.json");
         LevelData data = JsonUtility.FromJson<LevelData>(json);
 
         // load timer and xp
