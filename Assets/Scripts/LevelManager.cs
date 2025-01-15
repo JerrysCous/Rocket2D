@@ -12,8 +12,10 @@ public class LevelManager : MonoBehaviour {
     public List<Transform> enemies = new List<Transform>();
     public Timer timer;
     public XPManager xpManager;
+    public PlayerHealthBar playerHealthBar;
 
     private void Update() {
+        //placeholder inputs for testing
         if (Input.GetKeyDown(KeyCode.LeftControl)) {
             SaveLevel();
         }
@@ -45,10 +47,10 @@ public class LevelManager : MonoBehaviour {
     }
 
     void LoadLevel() {
-        string json = File.ReadAllText(Application.dataPath + "/testLevel.json");
+        string json = File.ReadAllText(Application.dataPath + "/gameSave.json");
         LevelData data = JsonUtility.FromJson<LevelData>(json);
 
-        // Load timer and XP
+        // load timer and xp
         if (timer != null) {
             timer.SetTime(data.currentTime);
         }
@@ -57,7 +59,11 @@ public class LevelManager : MonoBehaviour {
             xpManager.SetXP(data.currentXP, data.playerLevel);
         }
 
-        // Load tiles
+        if (playerHealthBar != null) {
+            playerHealthBar.SetHealth(data.currentHealth);
+        }
+
+        // load tiles
         tilemap.ClearAllTiles();
         for (int i = 0; i < data.tiles.Count; i++) {
             tilemap.SetTile(
@@ -66,13 +72,12 @@ public class LevelManager : MonoBehaviour {
             );
         }
 
-        // Load player position and rotation
         if (player != null) {
             player.position = new Vector3(data.playerPosition.x, data.playerPosition.y, data.playerPosition.z);
             player.rotation = Quaternion.Euler(data.playerRotation.x, data.playerRotation.y, data.playerRotation.z);
         }
 
-        // Load enemies positions and rotations
+        // load enemies
         for (int i = 0; i < data.enemiesPositions.Count; i++) {
             if (i < enemies.Count) {
                 enemies[i].position = new Vector3(
@@ -95,7 +100,7 @@ public class LevelManager : MonoBehaviour {
 
         LevelData data = new LevelData();
 
-        // Save timer and XP
+        // save timer and xp
         if (timer != null) {
             levelData.currentTime = timer.GetCurrentTime();
         }
@@ -105,7 +110,12 @@ public class LevelManager : MonoBehaviour {
             levelData.playerLevel = xpManager.GetCurrentLevel();
         }
 
-        // Save tiles
+        // save health
+        if (playerHealthBar != null) {
+            levelData.currentHealth = playerHealthBar.GetCurrentHealth();
+        }
+
+        // save tiles
         for (int x = bounds.min.x; x < bounds.max.x; x++) {
             for (int y = bounds.min.y; y < bounds.max.y; y++) {
                 TileBase temp = tilemap.GetTile(new Vector3Int(x, y, 0));
@@ -117,26 +127,26 @@ public class LevelManager : MonoBehaviour {
                         levelData.poses_y.Add(y);
                     }
                     else {
-                        Debug.LogWarning($"Tile not found in the tiles list: {temp}");
+                        Debug.LogWarning($"tile not found in the tiles list: {temp}");
                     }
                 }
             }
         }
 
-        // Save player position and rotation
+        // save player position
         if (player != null) {
             levelData.playerPosition = new Vector3Data(player.position);
             levelData.playerRotation = new Vector3Data(player.rotation.eulerAngles);
         }
 
-        // Save enemies positions and rotations
+        // save enemies
         foreach (var enemy in enemies) {
             levelData.enemiesPositions.Add(new Vector3Data(enemy.position));
             levelData.enemiesRotations.Add(new Vector3Data(enemy.rotation.eulerAngles));
         }
 
         string json = JsonUtility.ToJson(levelData, true);
-        File.WriteAllText(Application.dataPath + "/testLevel.json", json);
+        File.WriteAllText(Application.dataPath + "/saveGame.json", json);
     }
 
 
@@ -152,9 +162,11 @@ public class LevelData {
     public Vector3Data playerPosition;
     public Vector3Data playerRotation;
 
-    public float currentTime; // Timer value
-    public float currentXP;   // Current XP
-    public int playerLevel;   // Player level
+    public float currentTime;
+    public float currentXP;
+    public int playerLevel;
+
+    public float currentHealth;
 
     public List<Vector3Data> enemiesPositions = new List<Vector3Data>();
     public List<Vector3Data> enemiesRotations = new List<Vector3Data>();

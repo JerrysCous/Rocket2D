@@ -10,6 +10,7 @@ public class Timer : MonoBehaviour
 
     void Start()
     {
+        GameTime = GetComponent<TextMeshProUGUI>();
         // Initialize the timer text to 00:00
         GameTime.text = "00:00";
         StartGame();

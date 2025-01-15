@@ -2142,6 +2142,7 @@ MonoBehaviour:
   enemies: []
   timer: {fileID: 797104943}
   xpManager: {fileID: 1382978006}
+  playerHealthBar: {fileID: 1382978005}
 --- !u!4 &692198699
 Transform:
   m_ObjectHideFlags: 0
@@ -2565,6 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3cde87fd6c4431418ce9777105d60b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GameTime: {fileID: 797104941}
 --- !u!1 &800911886
 GameObject:
   m_ObjectHideFlags: 0
@@ -3566,7 +3568,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Quit to main menu
-  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3690,7 +3691,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseEnemiesPerWave: 5
   waveScalingFactor: 1.5
-  spawnInterval: 0.5
+  spawnInterval: 0.01
   minSpawnDistance: 14
   maxSpawnDistance: 14
   enemyPrefabs:
@@ -4710,7 +4711,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1705404217
 Transform:
   m_ObjectHideFlags: 0
@@ -4759,7 +4760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1719528346
 Transform:
   m_ObjectHideFlags: 0

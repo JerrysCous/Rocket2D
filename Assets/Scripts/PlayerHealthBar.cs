@@ -27,18 +27,26 @@ public class PlayerHealthBar : MonoBehaviour {
         UpdateHealthBar();  // Update the health bar after taking damage
     }
 
+    public float GetCurrentHealth() {
+        return currentHealth;
+    }
+
+    public void SetHealth(float health) {
+        currentHealth = health;
+        UpdateHealthBar();
+    }
+
     public void Heal(float amount)
     {
-        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);  // Heal but clamp to maxHealth
+        currentHealth = Mathf.Min(currentHealth + amount, maxHealth);
         Debug.Log($"Player healed by {amount}. Current health: {currentHealth}");
-        UpdateHealthBar();  // Update the health bar after healing
+        UpdateHealthBar();
     }
 
     private void Die()
     {
         Debug.Log("Player has died");
-        // Add your death logic here (e.g., respawn, game over, etc.)
-        gameObject.SetActive(false);  // Example: Disable the player object
+        gameObject.SetActive(false);
     }
 
     private void UpdateHealthBar()

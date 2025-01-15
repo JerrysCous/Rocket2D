@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3993051143924000051}
   - component: {fileID: 8759557543412847905}
   - component: {fileID: 1327864381417201117}
-  - component: {fileID: 7220770119782566864}
   m_Layer: 5
   m_Name: Resume
   m_TagString: Untagged
@@ -121,7 +120,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7220770119782566864}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LoadChunksScript, Assembly-CSharp
         m_MethodName: LoadChunks
         m_Mode: 1
@@ -133,15 +132,3 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &7220770119782566864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 353217836621074740}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb764a338eb0ec846882015353df501f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
