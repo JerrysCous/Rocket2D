@@ -14,6 +14,18 @@ public class EnemyController : MonoBehaviour {
     private PlayerHealthBar playerHealth;
     private float lastAttackTime;  // Time of the last attack
 
+
+    private void OnEnable() {
+        // Notify LevelManager when this enemy spawns
+        LevelManager.Instance.RegisterEnemy(this.transform);
+    }
+
+    private void OnDisable() {
+        // Notify LevelManager when this enemy is destroyed
+        if (LevelManager.Instance != null)
+            LevelManager.Instance.UnregisterEnemy(this.transform);
+    }
+
     private void Start() {
         moveSpeed = UnityEngine.Random.Range(
             movementConfig.MinMoveSpeed,

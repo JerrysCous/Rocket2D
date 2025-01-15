@@ -133,4 +133,21 @@ public class XPManager : MonoBehaviour {
         Time.timeScale = 1f;
         playerMovement.canMove = true;
     }
+
+    public float GetCurrentXP() {
+        return currentXP;
+    }
+
+    public int GetCurrentLevel() {
+        return playerLevel;
+    }
+
+    public void SetXP(float xp, int level) {
+        currentXP = xp;
+        playerLevel = level;
+        UpdateXPBar();
+        UpdateLevelText();
+        UpdateCurrentLevelText();
+    }
+
 }

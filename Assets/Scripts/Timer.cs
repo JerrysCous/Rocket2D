@@ -15,6 +15,14 @@ public class Timer : MonoBehaviour
         StartGame();
     }
 
+    public float GetCurrentTime() {
+        return timeElapsed;
+    }
+
+    public void SetTime(float time) {
+        timeElapsed = time;
+    }
+
     void Update()
     {
         // Increment the time regardless of game state
@@ -47,3 +55,4 @@ public class Timer : MonoBehaviour
         StartGame();
     }
 }
+

@@ -2099,6 +2099,64 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &692198697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 692198699}
+  - component: {fileID: 692198698}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &692198698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692198697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7abc31eb8e8c37140a8d78058eef4cc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap: {fileID: 1322169147}
+  tiles:
+  - {fileID: 11400000, guid: 62cffe50a20558546936923cac531217, type: 2}
+  - {fileID: 11400000, guid: caa3f03a99f70564dbd39e7c86b1a2cc, type: 2}
+  - {fileID: 11400000, guid: b81a2832becf93e42a1a4f8719681be9, type: 2}
+  - {fileID: 11400000, guid: 13e43b193650a36419a3709dbbaafb2f, type: 2}
+  - {fileID: 11400000, guid: 49e4c86cd6499be4dbe0e816061d04c9, type: 2}
+  - {fileID: 11400000, guid: a514e55f6fdc4c3479da165e9332a6bd, type: 2}
+  - {fileID: 11400000, guid: 0e537a0bac371ff48a2d8859bbdae4aa, type: 2}
+  - {fileID: 11400000, guid: 32c5a330dcce41e4a9d1e01430e7820a, type: 2}
+  player: {fileID: 1382977998}
+  enemies: []
+  timer: {fileID: 797104943}
+  xpManager: {fileID: 1382978006}
+--- !u!4 &692198699
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692198697}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.118948, y: 0.53567594, z: 734.24976}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &693004066
 GameObject:
   m_ObjectHideFlags: 0
@@ -3653,16 +3711,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1322169147}
   floorTiles:
-  - {fileID: 11400000, guid: c03a3b55d21bc8140a3a0e15202a7c69, type: 2}
-  - {fileID: 11400000, guid: 4aba809c3d559e747a7bdf9a569319e9, type: 2}
+  - {fileID: 11400000, guid: 42acbdd0f0d4f5049843d46df596416f, type: 2}
+  - {fileID: 11400000, guid: 5405f0c2fd9e19e409ed92ee20eae27c, type: 2}
   bigTiles:
-  - {fileID: 11400000, guid: cca4d1e6b100d26409ba97ed9abbb317, type: 2}
-  - {fileID: 11400000, guid: 91fb28df7a4571044a55079dd875ccbf, type: 2}
+  - {fileID: 11400000, guid: 02b9a984d115238479fe274bc1d7efb9, type: 2}
+  - {fileID: 11400000, guid: 694d5076ef6b9e740ba6b029480d5144, type: 2}
   craterTiles:
-  - {fileID: 11400000, guid: 4486ae3438565e74b82993dd572026cc, type: 2}
-  - {fileID: 11400000, guid: bc31f7ea18684834a91a9aa9d4051414, type: 2}
-  treeTile: {fileID: 11400000, guid: 29449032176980a4b8923129f510ee74, type: 2}
-  pondTile: {fileID: 11400000, guid: dd70e396485fa41439984a9fbafc533e, type: 2}
+  - {fileID: 11400000, guid: 65d6e83a1638d4c4fa54be75ecdb3c43, type: 2}
+  - {fileID: 11400000, guid: b8582c412fd1322468e8ece80f50fa59, type: 2}
+  treeTile: {fileID: 11400000, guid: c18d0adbca232bb4c90f5a47b4f50023, type: 2}
+  pondTile: {fileID: 11400000, guid: 810b2fda1123d4d4683b355086a5fbea, type: 2}
   chunkSize: 16
   viewDistance: 2
   treeChance: 0.15
@@ -5337,3 +5395,4 @@ SceneRoots:
   - {fileID: 1382977998}
   - {fileID: 1981966152}
   - {fileID: 1096363787}
+  - {fileID: 692198699}
