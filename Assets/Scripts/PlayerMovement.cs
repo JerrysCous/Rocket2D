@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     public Vector2 lastMovedVector;
 
     public bool canMove = true; // Controls whether the player can move
-
+    public Vector2 LastMovedVector { get => lastMovedVector; private set => lastMovedVector = value; }
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

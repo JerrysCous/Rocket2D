@@ -7,6 +7,7 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour {
     protected override void Start() {
         base.Start();
         kc = FindObjectOfType<KnifeController>();
+        Destroy(gameObject, destroyAfterSeconds);
     }
 
     void Update() {
@@ -21,6 +22,7 @@ public class KnifeBehaviour : ProjectileWeaponBehaviour {
                 EnemyWaveSpawner.Instance.EnemyDefeated();
                 Destroy(collision.gameObject);
             }
+
         }
     }
 
